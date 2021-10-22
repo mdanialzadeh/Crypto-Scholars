@@ -12,9 +12,12 @@ const form_results = document.querySelector(".email_result")
 const chessboard = document.querySelector(".chessboard_container")
 
 
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  }
+
+    window.onbeforeunload = function () {
+        About.scrollIntoView({behavior:"smooth"});
+    }
+
+
 
 function buttons () {
     
@@ -32,6 +35,10 @@ navButtons[2].addEventListener('click', () => {
 
 navButtons[3].addEventListener('click', () => {
     info.scrollIntoView({behavior: "smooth"})
+})
+
+navButtons[5].addEventListener('click', () => {
+    chessGame();
 })
 
 
@@ -102,112 +109,112 @@ overlays()
         image: "source/peices/b_pawn.png",
         name: "pawn",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 1,
     },
     {
         image: "source/peices/b_pawn.png",
         name: "pawn",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 2,
     },
     {
         image: "source/peices/b_pawn.png",
         name: "pawn",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 3,
     },
     {
         image: "source/peices/b_pawn.png",
         name: "pawn",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 4,
     },
     {
         image: "source/peices/b_pawn.png",
         name: "pawn",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 5,
     },
     {
         image: "source/peices/b_pawn.png",
-        name: "pawn",
+        name: "pawn1b",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 6,
     },
     {
         image: "source/peices/b_pawn.png",
-        name: "pawn",
+        name: "pawn3b",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 7,
     },
     {
         image: "source/peices/b_pawn.png",
-        name: "pawn",
+        name: "pawn2b",
         color: "black",
-        row: 7 ,
+        row: 2 ,
         columns: 8,
     },
     {
         image: "source/peices/b_bishop.png",
         name: "bishop",
         color: "black",
-        row: 8 ,
+        row: 1 ,
         columns: 3 ,
     },
     {
     image: "source/peices/b_bishop.png",
     name: "bishop",
     color: "black",
-    row: 8 ,
+    row: 1 ,
     columns: 6
     },
     {
         image: "source/peices/b_knight.png",
         name: "knight",
         color: "black",
-        row: 8 ,
+        row: 1 ,
         columns: 2,
     },
     {
         image: "source/peices/b_knight.png",
         name: "knight",
         color: "black",
-        row: 8 ,
+        row: 1 ,
         columns: 7
     },  
     {
         image: "source/peices/b_rook_1x.png",
         name: "rook",
         color: "black",
-        row: 8 ,
+        row: 1 ,
         columns: 1
     },
     {
         image: "source/peices/b_rook_1x.png",
         name: "rook",
         color: "black",
-        row: 8 ,
+        row: 1 ,
         columns: 8
     },
     {
         image: "source/peices/b_queen_1x.png",
         name: "queen",
         color: "black",
-        row: 8 ,
+        row: 1 ,
         columns: 4
     },
     {
         image: "source/peices/b_king.png",
         name: "king",
         color: "black",
-        row: 8 ,
+        row: 1 ,
         columns: 5
     },
 ]
@@ -220,112 +227,112 @@ const whitePeices = [
     image: "source/peices/w_pawn_1x.png",
     name: "pawn",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 1,
 },
 {
     image: "source/peices/w_pawn_1x.png",
     name: "pawn",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 2,
 },
 {
     image: "source/peices/w_pawn_1x.png",
     name: "pawn",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 3,
 },
 {
     image: "source/peices/w_pawn_1x.png",
-    name: "pawn",
+    name: "pawn1w",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 4,
 },
 {
     image: "source/peices/w_pawn_1x.png",
-    name: "pawn",
+    name: "pawn2w",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 5,
 },
 {
     image: "source/peices/w_pawn_1x.png",
     name: "pawn",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 6,
 },
 {
     image: "source/peices/w_pawn_1x.png",
     name: "pawn",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 7,
 },
 {
     image: "source/peices/w_pawn_1x.png",
     name: "pawn",
     color: "white",
-    row: 2 ,
+    row: 7 ,
     columns: 8,
 },
 {
     image: "source/peices/w_bishop_1x.png",
-    name: "bishop",
+    name: "bishop1w",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 3,
 },
 {
     image: "source/peices/w_bishop_1x.png",
     name: "bishop",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 6,
 },
 {
     image: "source/peices/w_knight_1x.png",
     name: "knight",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 2,
 }, 
 {
     image: "source/peices/w_knight_1x.png",
     name: "knight",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 7,
 }, 
 {
     image: "source/peices/w_rook_1x.png",
     name: "rook",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 1,
 },
 {
     image: "source/peices/w_rook_1x.png",
     name: "rook",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 8,
 },
 {
     image: "source/peices/w_queen_1x.png",
     name: "queen",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 4
 },
 {
     image: "source/peices/w_king_1x.png",
     name: "king",
     color: "white",
-    row: 1 ,
+    row: 8 ,
     columns: 5
 },
 ]
@@ -337,7 +344,8 @@ function setUp (x) {
         const newpeice = document.createElement("img")
         newpeice.classList = x.name;
         newpeice.src = x.image
-        newpeice.setAttribute("color",x.color )
+        newpeice.setAttribute("color",x.color)
+        newpeice.setAttribute("draggable",false)
         newpeice.style.gridColumn = x.columns;
         newpeice.style.maxWidth = "70%"
         newpeice.style.gridRow = x.row;
@@ -351,13 +359,64 @@ function setUp (x) {
  blackPeices.forEach(element => setUp(element))   
  whitePeices.forEach(element => setUp(element))
 
+    const pawn1w = document.getElementsByClassName("pawn1w");
+    const pawn1b = document.getElementsByClassName("pawn1b");
+    const bishop1w = document.getElementsByClassName("bishop1w");
+
+function chessGame() {
+
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+    async function turnOne() {
+
+
+        pawn1w[0].classList.add ("jump_up")
+        await sleep (700)
+        pawn1w[0].classList.remove ("jump_up")
+        pawn1w[0].attributes[4].value = "grid-area: 6 / 4 / auto / auto; max-width: 70%;"
+        pawn1w[0].classList.add('jump_down')
+        pawn1w[0].classList.remove('jump_down')
+
+
+        await sleep (1000)
+        pawn1w[0].classList.add ("jump_up")
+        await sleep (700)
+        pawn1w[0].classList.remove ("jump_up")
+        pawn1w[0].attributes[4].value = "grid-area: 5 / 4 / auto / auto; max-width: 70%;"
+        pawn1w[0].classList.add('jump_down')
+        pawn1w[0].classList.remove('jump_down')
+                
+        await sleep (1000)
 
 
 
+ 
+
+
+        pawn1b[0].attributes[4].value = "grid-area: 3 / 6 / auto / auto; max-width: 70%;"
+
+        await sleep (700)
+       
+        pawn1b[0].attributes[4].value = "grid-area: 4 / 6 / auto / auto; max-width: 70%;"
+
+    }
 
 
 
+     
 
+ 
+    
+    turnOne()
+   
+
+  //  function turnTwo () {
+  ///      bishop1w[0].attributes[4].value = "grid-area: 4/7/auto/auto; max-width: 70%";
+  //  }
+}
 
 
 
