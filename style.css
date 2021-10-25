@@ -22,6 +22,7 @@ body {
     margin: 0;
     width:100%;
     background-color: #D9D9D9;
+    background-attachment: fixed;
 }
 
 .main_container {
@@ -104,7 +105,7 @@ button:focus {
 
 .home {
     height: 100vh;
-    background: linear-gradient(182deg, transparent 16.8vh, #796ba1 17vh, #5a516e 95vh, transparent 95.2vh);
+    background: linear-gradient(182deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +118,7 @@ button:focus {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 5em;
     row-gap: 1em;
-    height: 66%;
+    height: 70vh;
     width: 100%;
     margin: 0% 5%;
     justify-items: start;
@@ -183,22 +184,28 @@ button:focus {
 
 .roadmap{
     height: 100vh;
-    background: linear-gradient(178deg, transparent 16.8vh, #796ba1 17vh, #5a516e 95vh, transparent 95.2vh);
+    background: linear-gradient(178deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
+    background-position: center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .roadmap_container {
-    height: 66%;
+    height: 70vh;
     width: 100%;
     margin: 0% 5%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     position: relative;
     scroll-snap-align: center;
+    
 }
+
 
 .roadmap_container > h1 {
     position: absolute;
@@ -208,9 +215,8 @@ button:focus {
 }
 
 .chessboard_container {
-    margin-top: 5em;
-    height: 35em;
-    width: 35em;
+    height: calc(30vh + 10.8vw);
+    width: calc(30vh + 10.8vw);
     background-image: url(source/Chess_Board.png);
     background-size: cover;
     display: grid;
@@ -222,16 +228,66 @@ button:focus {
 
 
 
+.roadmap_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    line-height: 2.1em;
+    height: calc(30vh + 10.8vw);
+    width: calc(30vh + 25.8vw);
+    overflow-x: hidden;
+}
+
+.roadmapinfo {
+    animation: myAnim 1s ease 0s 1 normal backwards; 
+    font-size: 1.4em;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;    
+    width: 100%;
+
+}
+
+.roadmapinfo > img {
+    margin-right: 10px;
+    margin-left: 2%;
+    max-width: 1.7em;
+    max-height: 1.7em;
+}
+
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media only screen and (max-width: 1200px) {
+    .roadmap_container {
+      flex-direction:column-reverse;
+    }
+    .roadmap_info {
+        height:calc(25vh);
+        width: 100%;
+    }
+  }
+
 .nft{
     height: 100vh;
-    background: linear-gradient(182deg, transparent 16.8vh, #796ba1 17vh, #5a516e 95vh, transparent 95.2vh);
+    background: linear-gradient(182deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .nft_container {
-    height: 66%;
+    height: 70vh;
     width: 100%;
     margin: 0% 5%;
     display: grid;
@@ -366,14 +422,14 @@ button:focus {
 
   .moreinfo {
     height: 100vh;
-    background: linear-gradient(178deg, transparent 16.8vh, #796ba1 17vh, #5a516e 95vh, transparent 95.2vh);
+    background: linear-gradient(178deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .moreinfo_container {
-    height: 100%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -391,10 +447,6 @@ button:focus {
   }
 
   
-  .moreinfo_container > button:hover::after {
-        color: orange;
-  }
-
   .moreinfo_title {
       text-align: center;
       line-height: 2;
@@ -441,55 +493,114 @@ button:focus {
       border-radius: 10px 10px;
   }
 
+
+
+
 .jump_up {
-    -webkit-animation: slide-top 0.5s linear both;
-	        animation: slide-top 0.5s linear both;
+    animation: slide-up .3s ease-in-out both;
 }
 
 .jump_down {
-	-webkit-animation: slide-bottom 0.5s linear both;
-	        animation: slide-bottom 0.5s linear both;
+    animation: slide-down .3s ease-in-out both;
 }
 
-@-webkit-keyframes slide-top {
+.jump_side {
+    animation: slide-sideways-up .3s ease-in-out both;
+}
+
+.jump_side_down {
+    animation: slide-sideways-down .3s ease-in-out both;
+}
+
+.jump_left_down {
+    animation: sideways-left-down .3s ease-in-out both;
+}
+
+.exit {
+    animation: exit 1s ease 0s 1 normal forwards;
+}
+
+@keyframes slide-up {
     0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
+        transform: translateY(0) ;
     }
+
+    80% {
+        transform: translateY(-4.875em)scale3d(.9, 1.2, 0) ;
+    }
+
     100% {
-      -webkit-transform: translateY(-4.875em);
-              transform: translateY(-4.875em);
+        transform:translateY(-.375em)
     }
-  }
-  @keyframes slide-top {
+}
+
+
+
+@keyframes slide-down {
     0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-4.875em);
-              transform: translateY(-4.875em);
-    }
-  }
-  
-  @-webkit-keyframes slide-bottom {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-.375);
-              transform: translateY(-.375);
-    }
-  }
-  @keyframes slide-bottom {
-    0% {
-        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
+
+    80% {
+        transform: translateY(4.875em) scale3d(.9, 1.2, 0);
+        
+    }
+
     100% {
-        -webkit-transform: translateY(-.375);
-        transform: translateY(-.375);
+        transform:translateY(.375em)
+    }
+}
+
+@keyframes slide-sideways-up {
+    0% {
+        transform: translate(0,0);
+    }
+
+    80% {
+        transform: translate(4.875em, -4.875em) scale3d(.9, 1.2, 0);
+    }
+
+    100% {
+        transform: translate(4.375em,-4.375em );
+    }
+}
+
+@keyframes slide-sideways-down {
+    0% {
+        transform: translate(0,0);
+    }
+
+    80% {
+        transform: translate(4.875em,4.875em ) scale3d(.9, 1.2, 0);
+    }
+
+    100% {
+        transform: translate(.375em,.375em);
+    }
+}
+
+@keyframes sideways-left-down {
+    0% {
+        transform: translate(0,0);
+    }
+
+    80% {
+        transform: translate(4.875em,-4.875em ) scale3d(.9, 1.2, 0);
+    }
+
+    100% {
+        transform: translate(.375em,-.375em);
+    }
+}
+
+@keyframes exit {
+    0% {
+      opacity: 1;
+      transform: translateX(0) rotate(0deg);
+    }
+  
+    100% {
+      opacity: 0;
+      transform: translateX(-250px) rotate(-200deg);
     }
   }
-  

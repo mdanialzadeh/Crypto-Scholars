@@ -13,15 +13,17 @@ const chessboard = document.querySelector(".chessboard_container")
 
 
 
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+} else {
     window.onbeforeunload = function () {
-        About.scrollIntoView({behavior:"smooth"});
+        window.scrollTo(0, 0);
     }
-
-
+}
 
 function buttons () {
     
-    navButtons[0].addEventListener('click', () => {
+navButtons[0].addEventListener('click', () => {
         About.scrollIntoView({behavior: "smooth"})
 })
 
@@ -36,11 +38,6 @@ navButtons[2].addEventListener('click', () => {
 navButtons[3].addEventListener('click', () => {
     info.scrollIntoView({behavior: "smooth"})
 })
-
-navButtons[5].addEventListener('click', () => {
-    chessGame();
-})
-
 
 }
 
@@ -323,7 +320,7 @@ const whitePeices = [
 },
 {
     image: "source/peices/w_queen_1x.png",
-    name: "queen",
+    name: "queenw",
     color: "white",
     row: 8 ,
     columns: 4
@@ -362,8 +359,15 @@ function setUp (x) {
     const pawn1w = document.getElementsByClassName("pawn1w");
     const pawn1b = document.getElementsByClassName("pawn1b");
     const bishop1w = document.getElementsByClassName("bishop1w");
+    const roadmapinfo = document.getElementsByClassName("roadmap_info")
+    const pawn2b = document.getElementsByClassName("pawn2b")
+    const pawn3b = document.getElementsByClassName("pawn3b")
+    const pawn2w = document.getElementsByClassName("pawn2w")
+    const queenw = document.getElementsByClassName("queenw")
+    var active = "false"
 
 function chessGame() {
+
 
 
     function sleep(ms) {
@@ -372,52 +376,213 @@ function chessGame() {
 
     async function turnOne() {
 
-
+        await sleep (500)
         pawn1w[0].classList.add ("jump_up")
-        await sleep (700)
-        pawn1w[0].classList.remove ("jump_up")
+        await sleep (240)
         pawn1w[0].attributes[4].value = "grid-area: 6 / 4 / auto / auto; max-width: 70%;"
-        pawn1w[0].classList.add('jump_down')
-        pawn1w[0].classList.remove('jump_down')
-
-
-        await sleep (1000)
-        pawn1w[0].classList.add ("jump_up")
-        await sleep (700)
         pawn1w[0].classList.remove ("jump_up")
+        await sleep (300)
+        pawn1w[0].classList.add ("jump_up")
+        await sleep (240)
         pawn1w[0].attributes[4].value = "grid-area: 5 / 4 / auto / auto; max-width: 70%;"
-        pawn1w[0].classList.add('jump_down')
-        pawn1w[0].classList.remove('jump_down')
-                
+        pawn1w[0].classList.remove ("jump_up")
         await sleep (1000)
 
-
-
- 
-
-
+        pawn1b[0].classList.add ("jump_down")
+        await sleep (240)
         pawn1b[0].attributes[4].value = "grid-area: 3 / 6 / auto / auto; max-width: 70%;"
-
-        await sleep (700)
-       
+        pawn1b[0].classList.remove ("jump_down")
+        await sleep (300)
+        pawn1b[0].classList.add ("jump_down")
+        await sleep (240)
         pawn1b[0].attributes[4].value = "grid-area: 4 / 6 / auto / auto; max-width: 70%;"
+        pawn1b[0].classList.remove ("jump_down")
 
+        await sleep (300)
+ 
+        const x = document.querySelector(".roadmap_info");
+        const road_div = document.createElement("div");
+        road_div.classList = "roadmapinfo"
+        const roadimg = document.createElement("img");
+        roadimg.setAttribute("src", "source/peices/b_pawn.png")
+        const roadinfo = document.createElement("p")
+        roadinfo.innerText = "Q4- 2021 Pre-Registration Window open for potential players to show interest. "
+        road_div.append(roadimg)
+        road_div.append(roadinfo)
+        x.append(road_div)
+
+        
+        await sleep (1000)
+        turnTwo();
+        
     }
 
-
-
-     
+    turnOne()
+    
 
  
+  async function turnTwo () {
+        bishop1w[0].classList.add ("jump_side")
+        await sleep (230)
+        bishop1w[0].classList.remove("jump_side")
+        bishop1w[0].attributes[4].value = "grid-area: 7/4/auto/auto; max-width: 70%";
+        await sleep (300)
+
+        bishop1w[0].classList.add ("jump_side")
+        await sleep (230)
+        bishop1w[0].attributes[4].value = "grid-area: 6/5/auto/auto; max-width: 70%";
+        bishop1w[0].classList.remove("jump_side")
+        await sleep (300)
+        
+        bishop1w[0].classList.add ("jump_side")
+        await sleep (230)
+        bishop1w[0].attributes[4].value = "grid-area: 5/6/auto/auto; max-width: 70%";
+        bishop1w[0].classList.remove("jump_side")
+        await sleep (300)
+
+        bishop1w[0].classList.add ("jump_side")
+        await sleep (230)
+        bishop1w[0].attributes[4].value = "grid-area: 4/7/auto/auto; max-width: 70%";
+        bishop1w[0].classList.remove("jump_side")
+        await sleep (700)
+
+        pawn2b[0].classList.add ("jump_down")
+        await sleep (240)
+        pawn2b[0].attributes[4].value = "grid-area: 3/8/auto/auto; max-width: 70%";
+        pawn2b[0].classList.remove("jump_down")
+        await sleep (240)
+
+        const x = document.querySelector(".roadmap_info");
+        const road_div = document.createElement("div");
+        road_div.classList = "roadmapinfo"
+        const roadimg = document.createElement("img");
+        roadimg.setAttribute("src", "source/peices/b_knight.png")
+        const roadinfo = document.createElement("p")
+        roadinfo.innerText = "Q1- 2022 NFT Sales, if we get enough demand from pre-registrations"
+        road_div.append(roadimg)
+        road_div.append(roadinfo)
+        x.append(road_div)
+        await sleep (1000)
+        turnThree()
+  }
+
+  async function turnThree () {
+    bishop1w[0].classList.add ("jump_side_down")
+    await sleep (240)
+    bishop1w[0].attributes[4].value = "grid-area: 5/8/auto/auto; max-width: 70%";
+    bishop1w[0].classList.remove("jump_side_down")
+    await sleep (700)
+
+    pawn3b[0].classList.add ("jump_down")
+    await sleep (240)
+    pawn3b[0].attributes[4].value = "grid-area: 3 / 7 / auto / auto; max-width: 70%;"
+    pawn3b[0].classList.remove ("jump_down")
+    await sleep (300)
+    pawn3b[0].classList.add ("jump_down")
+    await sleep (240)
+    pawn3b[0].attributes[4].value = "grid-area: 4 / 7 / auto / auto; max-width: 70%;"
+    pawn3b[0].classList.remove ("jump_down")
+
+    await sleep (300)
+
+    const x = document.querySelector(".roadmap_info");
+    const road_div = document.createElement("div");
+    road_div.classList = "roadmapinfo"
+    const roadimg = document.createElement("img");
+    roadimg.setAttribute("src", "source/peices/b_bishop.png")
+    const roadinfo = document.createElement("p")
+    roadinfo.innerText = "Q2- 2022 Game Development begins "
+    road_div.append(roadimg)
+    road_div.append(roadinfo)
+    x.append(road_div)
+    await sleep (1000)
     
-    turnOne()
-   
+    turnFour()
+  }
 
-  //  function turnTwo () {
-  ///      bishop1w[0].attributes[4].value = "grid-area: 4/7/auto/auto; max-width: 70%";
-  //  }
+  async function turnFour() {
+    pawn2w[0].classList.add ("jump_up")
+    await sleep (240)
+    pawn2w[0].attributes[4].value = "grid-area: 6 / 5 / auto / auto; max-width: 70%;"
+    pawn2w[0].classList.remove ("jump_up")
+    await sleep (300)
+    pawn2w[0].classList.add ("jump_up")
+    await sleep (240)
+    pawn2w[0].attributes[4].value = "grid-area: 5 / 5 / auto / auto; max-width: 70%;"
+    pawn2w[0].classList.remove ("jump_up")
+    await sleep (1000)
+    pawn1b[0].classList.add ("jump_down")
+    await sleep (240)
+    pawn2w[0].classList.add ("exit") 
+    pawn1b[0].attributes[4].value = "grid-area: 5 / 5 / auto / auto; max-width: 70%;"
+    pawn1b[0].classList.remove ("jump_down")
+    await sleep (300)
+
+    const x = document.querySelector(".roadmap_info");
+    const road_div = document.createElement("div");
+    road_div.classList = "roadmapinfo"
+    const roadimg = document.createElement("img");
+    roadimg.setAttribute("src", "source/peices/b_rook_1x.png")
+    const roadinfo = document.createElement("p")
+    roadinfo.innerText = "Q3- 2022 Smart Contract Integration begins"
+    road_div.append(roadimg)
+    road_div.append(roadinfo)
+    x.append(road_div)
+    await sleep (1000)
+
+    turnFive()
+  }
+
+  async function turnFive () {
+
+    queenw[0].classList.add ("jump_side")
+    await sleep (230)
+    queenw[0].classList.remove("jump_side")
+    queenw[0].attributes[4].value = "grid-area: 7/5/auto/auto; max-width: 70%";
+    await sleep (300)
+
+    queenw[0].classList.add ("jump_side")
+    await sleep (230)
+    queenw[0].attributes[4].value = "grid-area: 6/6/auto/auto; max-width: 70%";
+    queenw[0].classList.remove("jump_side")
+    await sleep (300)
+    
+    queenw[0].classList.add ("jump_side")
+    await sleep (230)
+    queenw[0].attributes[4].value = "grid-area: 5/7/auto/auto; max-width: 70%";
+    queenw[0].classList.remove("jump_side")
+    await sleep (300)
+
+    queenw[0].classList.add ("jump_side")
+    await sleep (230)
+    queenw[0].attributes[4].value = "grid-area: 4/8/auto/auto; max-width: 70%";
+    queenw[0].classList.remove("jump_side")
+    await sleep (700)
+
+    const x = document.querySelector(".roadmap_info");
+    const road_div = document.createElement("div");
+    road_div.classList = "roadmapinfo"
+    const roadimg = document.createElement("img");
+    roadimg.setAttribute("src", "source/peices/b_queen_1x.png")
+    const roadinfo = document.createElement("p")
+    roadinfo.innerText = "Q4- 2022 High School Game is open – first round of scholarship awarded for 2023"
+    road_div.append(roadimg)
+    road_div.append(roadinfo)
+    x.append(road_div)
+    await sleep (1000)
+
+  }
 }
+window.addEventListener('scroll', function() {
+	
+	var position = chessboard.getBoundingClientRect();
 
-
-
-
+	// detecting if element is fully visible
+	if(position.top >= 0 && position.bottom <= window.innerHeight) {
+        if (active == "false") {
+            chessGame();
+            active = true;
+        }
+	} 
+});
+    
