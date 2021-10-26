@@ -350,16 +350,15 @@ function setUp (x) {
 
 }
    
-
+blackPeices.forEach(element => setUp(element))   
+whitePeices.forEach(element => setUp(element))
  
     
- blackPeices.forEach(element => setUp(element))   
- whitePeices.forEach(element => setUp(element))
+
 
     const pawn1w = document.getElementsByClassName("pawn1w");
     const pawn1b = document.getElementsByClassName("pawn1b");
     const bishop1w = document.getElementsByClassName("bishop1w");
-    const roadmapinfo = document.getElementsByClassName("roadmap_info")
     const pawn2b = document.getElementsByClassName("pawn2b")
     const pawn3b = document.getElementsByClassName("pawn3b")
     const pawn2w = document.getElementsByClassName("pawn2w")
@@ -370,12 +369,13 @@ function chessGame() {
 
 
 
+
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
     async function turnOne() {
-
+       
         await sleep (500)
         pawn1w[0].classList.add ("jump_up")
         await sleep (240)
@@ -386,7 +386,7 @@ function chessGame() {
         await sleep (240)
         pawn1w[0].attributes[4].value = "grid-area: 5 / 4 / auto / auto; max-width: 70%;"
         pawn1w[0].classList.remove ("jump_up")
-        await sleep (1000)
+        await sleep (500)
 
         pawn1b[0].classList.add ("jump_down")
         await sleep (240)
@@ -400,19 +400,19 @@ function chessGame() {
 
         await sleep (300)
  
-        const x = document.querySelector(".roadmap_info");
-        const road_div = document.createElement("div");
+        const x = document.querySelector(".roadmap_container");
+        const road_div = document.createElement("span");
         road_div.classList = "roadmapinfo"
         const roadimg = document.createElement("img");
         roadimg.setAttribute("src", "source/peices/b_pawn.png")
         const roadinfo = document.createElement("p")
-        roadinfo.innerText = "Q4- 2021 Pre-Registration Window open for potential players to show interest. "
+        roadinfo.innerText = "Q4 2021" + "\n" + " Pre-Registration Window open for potential players to show interest. "
         road_div.append(roadimg)
         road_div.append(roadinfo)
         x.append(road_div)
 
         
-        await sleep (1000)
+        await sleep (2000)
         turnTwo();
         
     }
@@ -423,46 +423,46 @@ function chessGame() {
  
   async function turnTwo () {
         bishop1w[0].classList.add ("jump_side")
-        await sleep (230)
+        await sleep (240)
         bishop1w[0].classList.remove("jump_side")
         bishop1w[0].attributes[4].value = "grid-area: 7/4/auto/auto; max-width: 70%";
         await sleep (300)
 
         bishop1w[0].classList.add ("jump_side")
-        await sleep (230)
+        await sleep (240)
         bishop1w[0].attributes[4].value = "grid-area: 6/5/auto/auto; max-width: 70%";
         bishop1w[0].classList.remove("jump_side")
         await sleep (300)
         
         bishop1w[0].classList.add ("jump_side")
-        await sleep (230)
+        await sleep (240)
         bishop1w[0].attributes[4].value = "grid-area: 5/6/auto/auto; max-width: 70%";
         bishop1w[0].classList.remove("jump_side")
         await sleep (300)
 
         bishop1w[0].classList.add ("jump_side")
-        await sleep (230)
+        await sleep (240)
         bishop1w[0].attributes[4].value = "grid-area: 4/7/auto/auto; max-width: 70%";
         bishop1w[0].classList.remove("jump_side")
-        await sleep (700)
+        await sleep (500)
 
         pawn2b[0].classList.add ("jump_down")
         await sleep (240)
         pawn2b[0].attributes[4].value = "grid-area: 3/8/auto/auto; max-width: 70%";
         pawn2b[0].classList.remove("jump_down")
-        await sleep (240)
+        await sleep (300)
 
-        const x = document.querySelector(".roadmap_info");
-        const road_div = document.createElement("div");
+        const x = document.querySelector(".roadmap_container");
+        const road_div = document.createElement("span");
         road_div.classList = "roadmapinfo"
         const roadimg = document.createElement("img");
         roadimg.setAttribute("src", "source/peices/b_knight.png")
         const roadinfo = document.createElement("p")
-        roadinfo.innerText = "Q1- 2022 NFT Sales, if we get enough demand from pre-registrations"
+        roadinfo.innerText = "Q1- 2022:" + "\n" + "NFT Sales, if we get enough demand from pre-registrations"
         road_div.append(roadimg)
         road_div.append(roadinfo)
         x.append(road_div)
-        await sleep (1000)
+        await sleep (2000)
         turnThree()
   }
 
@@ -471,7 +471,7 @@ function chessGame() {
     await sleep (240)
     bishop1w[0].attributes[4].value = "grid-area: 5/8/auto/auto; max-width: 70%";
     bishop1w[0].classList.remove("jump_side_down")
-    await sleep (700)
+    await sleep (500)
 
     pawn3b[0].classList.add ("jump_down")
     await sleep (240)
@@ -483,19 +483,19 @@ function chessGame() {
     pawn3b[0].attributes[4].value = "grid-area: 4 / 7 / auto / auto; max-width: 70%;"
     pawn3b[0].classList.remove ("jump_down")
 
-    await sleep (300)
+    await sleep (500)
 
-    const x = document.querySelector(".roadmap_info");
-    const road_div = document.createElement("div");
+    const x = document.querySelector(".roadmap_container");
+    const road_div = document.createElement("span");
     road_div.classList = "roadmapinfo"
     const roadimg = document.createElement("img");
     roadimg.setAttribute("src", "source/peices/b_bishop.png")
     const roadinfo = document.createElement("p")
-    roadinfo.innerText = "Q2- 2022 Game Development begins "
+    roadinfo.innerText = "Q2 2022:" + "\n" + "Game Development begins"
     road_div.append(roadimg)
     road_div.append(roadinfo)
     x.append(road_div)
-    await sleep (1000)
+    await sleep (2000)
     
     turnFour()
   }
@@ -510,25 +510,25 @@ function chessGame() {
     await sleep (240)
     pawn2w[0].attributes[4].value = "grid-area: 5 / 5 / auto / auto; max-width: 70%;"
     pawn2w[0].classList.remove ("jump_up")
-    await sleep (1000)
-    pawn1b[0].classList.add ("jump_down")
+    await sleep (500)
+    pawn1b[0].classList.add ("jump_left_down")
     await sleep (240)
     pawn2w[0].classList.add ("exit") 
     pawn1b[0].attributes[4].value = "grid-area: 5 / 5 / auto / auto; max-width: 70%;"
-    pawn1b[0].classList.remove ("jump_down")
-    await sleep (300)
+    pawn1b[0].classList.remove ("jump_left_down")
+    await sleep (500)
 
-    const x = document.querySelector(".roadmap_info");
-    const road_div = document.createElement("div");
+    const x = document.querySelector(".roadmap_container");
+    const road_div = document.createElement("span");
     road_div.classList = "roadmapinfo"
     const roadimg = document.createElement("img");
     roadimg.setAttribute("src", "source/peices/b_rook_1x.png")
     const roadinfo = document.createElement("p")
-    roadinfo.innerText = "Q3- 2022 Smart Contract Integration begins"
+    roadinfo.innerText = "Q3 2022:" + "\n" + "Smart Contract Integration begins"
     road_div.append(roadimg)
     road_div.append(roadinfo)
     x.append(road_div)
-    await sleep (1000)
+    await sleep (2000)
 
     turnFive()
   }
@@ -536,40 +536,40 @@ function chessGame() {
   async function turnFive () {
 
     queenw[0].classList.add ("jump_side")
-    await sleep (230)
+    await sleep (240)
     queenw[0].classList.remove("jump_side")
     queenw[0].attributes[4].value = "grid-area: 7/5/auto/auto; max-width: 70%";
     await sleep (300)
 
     queenw[0].classList.add ("jump_side")
-    await sleep (230)
+    await sleep (240)
     queenw[0].attributes[4].value = "grid-area: 6/6/auto/auto; max-width: 70%";
     queenw[0].classList.remove("jump_side")
     await sleep (300)
     
     queenw[0].classList.add ("jump_side")
-    await sleep (230)
+    await sleep (240)
     queenw[0].attributes[4].value = "grid-area: 5/7/auto/auto; max-width: 70%";
     queenw[0].classList.remove("jump_side")
     await sleep (300)
 
     queenw[0].classList.add ("jump_side")
-    await sleep (230)
+    await sleep (240)
     queenw[0].attributes[4].value = "grid-area: 4/8/auto/auto; max-width: 70%";
     queenw[0].classList.remove("jump_side")
-    await sleep (700)
+    await sleep (500)
 
-    const x = document.querySelector(".roadmap_info");
-    const road_div = document.createElement("div");
+    const x = document.querySelector(".roadmap_container");
+    const road_div = document.createElement("span");
     road_div.classList = "roadmapinfo"
     const roadimg = document.createElement("img");
     roadimg.setAttribute("src", "source/peices/b_queen_1x.png")
     const roadinfo = document.createElement("p")
-    roadinfo.innerText = "Q4- 2022 High School Game is open – first round of scholarship awarded for 2023"
+    roadinfo.innerText = "Q4 2022:" + "\n" + "High School Game is open – first round of scholarship awarded for 2023"
     road_div.append(roadimg)
     road_div.append(roadinfo)
     x.append(road_div)
-    await sleep (1000)
+    await sleep (2000)
 
   }
 }
@@ -585,4 +585,5 @@ window.addEventListener('scroll', function() {
         }
 	} 
 });
+    
     

@@ -4,10 +4,10 @@
 } 
 
 html {
-    font-family: 'Sarabun', sans-serif;
-    font-size: calc(.5vw + .6vh);
+    font-family: 'Overpass', sans-serif;
+    font-size: calc(.5vw + .7vh);
     height: 100%;
-    font-weight: 600;
+background-color: #c5c5c5;
     color: #EFF2EF;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -21,8 +21,7 @@ body {
     height: 100%;
     margin: 0;
     width:100%;
-    background-color: #D9D9D9;
-    background-attachment: fixed;
+    
 }
 
 .main_container {
@@ -31,7 +30,7 @@ body {
 
 .nav_bar {
     display: grid;
-    grid-template-columns: 6% 28% 10% 50% 6%;
+    grid-template-columns: 5% 25% 5% 60% 5%;
     width: 100%;
     padding: 1% 0px .2em 0px;
     align-content:center;
@@ -39,22 +38,25 @@ body {
     position: fixed;
     padding-top: 3vh;
     top: 0;
-    background-color: #D9D9D9;
+    background-color: #c5c5c5;
     z-index: 2;
 }
 
 
 .logo {
     grid-column: 2;
-    font-size: 2em;
+    font-size: 2.4em;
+    font-weight: bolder;
     color: #7261A3;
     text-shadow: -2px 2px 4px  #4F5D75;
+    z-index: 4;
 }
 
 .nav_buttons {  
    grid-column: 4;
    display: flex;
    justify-content: space-around;   
+   z-index: 4;
 }
 
 
@@ -103,9 +105,12 @@ button:focus {
 }
 
 
+
+
+
 .home {
     height: 100vh;
-    background: linear-gradient(182deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
+    background: linear-gradient(178deg, transparent 14.5%, #796ba1 15%, #5a516e 90%, transparent 90.5%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,52 +119,68 @@ button:focus {
 
 .home_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 5em;
-    row-gap: 1em;
-    height: 70vh;
+    grid-template-columns: .4fr 1fr 1fr 1fr .4fr;
+    grid-template-rows: 1fr 1fr  1fr 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 3em;
+    height: 65vh;
     width: 100%;
-    margin: 0% 5%;
+    padding-top: 8em;
+    margin: 0% 10%;
     justify-items: start;
     align-items: center;
     scroll-snap-align: center;
-    
+    z-index: 1;
     
 }
 
 .welcome {
-    grid-column: 1/4;
+    grid-column: 1/6;
     text-align: center;
-    font-size: 3em;
+    font-size: 5em;
+    font-weight: bolder;
     width: 100%;
     text-shadow: -5px 6px 8px  #000000;
+    padding-top: .5em;
 }
 
+@keyframes zoomout {
+    from {
+      background-size: 40%;
+    }
+    to {
+      background-size: 10%;
+    }
+  }
+
 .about {
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-family: inherit;
-    grid-column: 1/3;
+    grid-column: 2/5;
     text-align:center;
+    margin-top: 1em;
 }
 
 .pre-reg {
     font-size: 1.2em;
     font-family: inherit;
-    grid-column: 2/4;
+    grid-column: 2/5;
+    grid-row: 5;
     text-align: center;
 }
 
 .signup {
     width: 100%;
     height: 80%;
-    grid-column: 1/4;
-    grid-row: 4/6;
+    grid-column: 1/6;
+    grid-row: 3/5;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
+
+
 
 .email_input {
     padding: .4em 2em;
@@ -184,40 +205,44 @@ button:focus {
 
 .roadmap{
     height: 100vh;
-    background: linear-gradient(178deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
+    background: linear-gradient(181.5deg, transparent 16.8vh, #796ba1 17vh, #5a516e 95vh, transparent 95.2vh);
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    
+    align-items: flex-start;
 }
 
 .roadmap_container {
-    height: 70vh;
-    width: 100%;
-    margin: 0% 5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .5fr repeat(4, 1fr) .5fr;
+    row-gap: 0;
+    column-gap: 4em;
     align-items: center;
-    position: relative;
+    height: 60vh;
+    margin-top: 2em;
+    width: 90%;
+    margin: 0% 5%;
     scroll-snap-align: center;
     
 }
 
 
-.roadmap_container > h1 {
-    position: absolute;
-    top:0;
-    right: .1em;
-
+.roadmap > h1 {
+    text-align: center;
+    margin-left: 10%;
+    
 }
 
 .chessboard_container {
-    height: calc(30vh + 10.8vw);
-    width: calc(30vh + 10.8vw);
+    height: calc(24vh + 16.8vw);
+    width: calc(24vh + 16.8vw);
+    aspect-ratio: 1/1;
     background-image: url(source/Chess_Board.png);
+    grid-column: 2/3;
+    grid-row: 1/7;
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -226,38 +251,59 @@ button:focus {
     align-items: center;
 }
 
-
-
-.roadmap_info {
+.roadmapinfo {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
-    line-height: 2.1em;
-    height: calc(30vh + 10.8vw);
-    width: calc(30vh + 25.8vw);
-    overflow-x: hidden;
+    height: 60%;
+    line-height: 1.4em;
 }
 
-.roadmapinfo {
-    animation: myAnim 1s ease 0s 1 normal backwards; 
-    font-size: 1.4em;
-    padding: 2%;
-    display: flex;
-    flex-direction: row;
-    justify-items: center;    
-    width: 100%;
-
+.roadmapinfo:nth-of-type(1) {
+    grid-row: 2/4;
+    grid-column: 1;     
+    animation: slidein_left 1s ease 0s 1 normal backwards;
+    text-align: center;
 }
+
+.roadmapinfo:nth-of-type(2) {
+    grid-row: 4/6;
+    grid-column: 1;
+    animation: slidein_left 1s ease 0s 1 normal backwards;
+    text-align: center;
+}
+
+.roadmapinfo:nth-of-type(3) {
+    grid-row: 1/3;
+    grid-column: 3;
+    animation: slidein_right 1s ease 0s 1 normal backwards;
+    text-align: center;
+}
+
+.roadmapinfo:nth-of-type(4) {
+    grid-row: 3/5;
+    grid-column: 3;
+    animation: slidein_right 1s ease 0s 1 normal forwards;
+    text-align: center;
+}
+
+.roadmapinfo:nth-of-type(5) {
+    grid-row: 5/7;
+    grid-column: 3;
+    animation: slidein_right 1s ease 0s 1 normal forwards;
+    text-align: center;
+}
+
+
 
 .roadmapinfo > img {
-    margin-right: 10px;
-    margin-left: 2%;
     max-width: 1.7em;
     max-height: 1.7em;
 }
 
 
-@keyframes myAnim {
+@keyframes slidein_left {
   0% {
     opacity: 0;
     transform: translateX(250px);
@@ -268,28 +314,85 @@ button:focus {
     transform: translateX(0);
   }
 }
-@media only screen and (max-width: 1200px) {
-    .roadmap_container {
-      flex-direction:column-reverse;
+@keyframes slidein_right {
+    0% {
+      opacity: 0;
+      transform: translateX(-250px);
     }
-    .roadmap_info {
-        height:calc(25vh);
-        width: 100%;
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slidein_down {
+    0% {
+      opacity: 0;
+      transform: translateY(-250px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+@media only screen and (max-width: 1200px) {
+    .roadmap_container{
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns:  1fr .5fr .5fr 1fr;
+        justify-items: center;
+        margin: 0, 10%;
+    }
+
+    .chessboard_container{
+        grid-row: 1/3;
+        grid-column: 1/5;
+        margin: 5em;
+    }
+    .roadmapinfo:nth-of-type(1) {
+        grid-row: 3;
+        grid-column: 1/3;     
+        animation: slidein_down 1s ease 0s 1 normal forwards;
+    }
+    
+    .roadmapinfo:nth-of-type(2) {
+        grid-row: 3;
+        grid-column: 3/5;
+        animation: slidein_down 1s ease 0s 1 normal forwards;
+    }
+    
+    .roadmapinfo:nth-of-type(3) {
+        grid-row: 4;
+        grid-column: 1;
+        animation: slidein_down 1s ease 0s 1 normal forwards;
+    }
+    
+    .roadmapinfo:nth-of-type(4) {
+        grid-row: 4;
+        grid-column: 2/4;
+        animation: slidein_down 1s ease 0s 1 normal forwards;
+    }
+    
+    .roadmapinfo:nth-of-type(5) {
+        grid-row: 4;
+        grid-column: 4;
+        animation: slidein_down 1s ease 0s 1 normal forwards;
     }
   }
 
 .nft{
     height: 100vh;
-    background: linear-gradient(182deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
+    background: linear-gradient(178deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .nft_container {
-    height: 70vh;
-    width: 100%;
-    margin: 0% 5%;
+    height: 65vh;
+    width: 90%;
+    margin: 2em, 5%;
     display: grid;
     grid-template-columns: .5fr 1fr 1fr 1fr 1fr 1fr .5fr;
     grid-template-rows: .3fr .6fr .6fr 1.2fr 1fr .4fr ;
@@ -300,13 +403,12 @@ button:focus {
 }
 
 .nft_container > h1 {
-    grid-column: 1/3;
+    grid-column: 6/8;
 }
 
 .nft_about {
     grid-column: 1/8;
     grid-row: 2;
-    
 }
 
 .nft_about2 {
@@ -346,8 +448,8 @@ button:focus {
     color: #fff;
     display: inline-block;
 
-    max-width: calc(10vw + 8vh);
-    max-height: calc(10vw + 8vh);
+    max-width: calc(6vw + 8vh);
+    max-height: calc(6vw + 8vh);
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -422,7 +524,7 @@ button:focus {
 
   .moreinfo {
     height: 100vh;
-    background: linear-gradient(178deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
+    background: linear-gradient(182deg, transparent 14.8%, #796ba1 15%, #5a516e 90%, transparent 90.2%);
     display: flex;
     align-items: center;
     justify-content: center;
