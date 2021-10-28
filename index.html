@@ -8,14 +8,16 @@
     <title>Crypto Scholars</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="main_container">
+   
 
-    <div class="nav_bar">
-        <div class="logo">Crypto Scholars</div>
+    
+    <div class="main_container">
+ <div class="nav_bar">
+        <img class="logo" src="source/c703bbea9caa4adea2694ff076d020ae.png"></img>
         <div class="nav_buttons">
                 <button>Home</button>
                 <button>Road Map</button>
@@ -23,32 +25,35 @@
                 <button>More Info</button>
         </div>
     </div>
-  
-    <div class="home">
-
-            <div class="home_container">
-                <div class="welcome">
-                    Welcome to Crypto Scholars!
-                </div>
-                <div class="about">
-                    <p>A competitive Chess platform for awarding scholarships to high school students through global tournaments</p>
-                </div>
-
-                <div class="pre-reg">
-                    <p>During the next 3 months, Crypto Scholars will have open pre-registration for all high school students. if you love chess we engourage you to sign up to recieve information about the competition as it becomes available.</p>
-                </div>
-
-                <div class="signup">
-                        <h1>Pre-Registration NOW OPEN!</h1>
-                        <h3>As a bonus for pre-registering before the cut off date on 12/31/2021 will have early access to the portal in order to set up their profiles</h3>
-                        <form name="preRegister" id="preRegister" >
-                            <input class="email_input" type="email" name="email" required placeholder="Enter Email Here">
-                            <button type="submit" id="submit_button" >Submit</button>
-                        </form>
-                        <p class="email_result"></p>
-                </div>
+        <div class="home">
+            
+            <div class="home_top">
+                    <h1>Welcome to Crypto Scholars</h1>
+                    <h3>A competitive Chess platform for awarding scholarships to high school students through global tournaments</h3>
+            </div>    
+            <div class="image_container">
+                <img class = "homeimage" src="source/Knight.jpg" alt="">
+                <img class = "homeimage" src="source/King.jpg" alt="">
+                <img class = "homeimage" src="source/Queen.jpg" alt="">
             </div>
+
+
+            <div class="pre-reg">
+                <p>During the next 3 months, Crypto Scholars will have open pre-registration for all high school students. if you love chess we engourage you to sign up to recieve information about the competition as it becomes available.</p>
+            </div>
+
+            <div class="signup">
+                <h1>Pre-Registration NOW OPEN!</h1>
+                <h3>As a bonus for pre-registering before the cut off date on 12/31/2021 will have early access to the portal in order to set up their profiles</h3>
+                <form name="preRegister" id="preRegister" >
+                    <input class="email_input" type="email" name="email" required placeholder="Enter Email Here">
+                        <button type="submit" id="submit_button" >Submit</button>
+                </form>
+                <p class="email_result"></p>
+                </div>
+            
         </div>
+    
 
         <div class="roadmap">
             <h1>Road Map</h1>
@@ -114,75 +119,76 @@
             <div class="overlay_container">
                 <div class="moreinfo_container">
                     <div class="moreinfo_title">
-                        <h2>More info</h2>
-                        <h4>click to get more information</h4>
+                        <h1>More info</h1>
+                        <h3>click to get more information</h3>
                     </div>
-                    <button>Tournament Rules <br> & Progress</button>
-                    <button>Open Competition</button>
-                    <button>Prize Pool & Initial Funding</button>
-                    <button>Community Engagement</button>
-                    <button>Contact Us</button>
+                    <div class="moreinfo_buttons">
+                        <button>Tournament Rules <br> & Progress</button>
+                        <button>Open <br> Competition</button>
+                        <button>Prize Pool <br> & Initial Funding</button>
+                        <button>Community <br> Engagement</button>
+                        <button>Contact <br> Us</button>
+                    </div>
                 </div>
-                
-                <div id="rules_overlay" class="overlay" >
-                    <ul>
-                       <li>
+                <div class="overlay_info">
 
-                           After registration is complete, students will be onboarded into the gaming platform to create an account and begin playing. This will be purely based on skill. The best competitor will win. 
-                        </li>
-                        <br>
-                        <li>
-
-                            The chess game will have preliminary rounds to determine ranks. This will be the calibration phase to make sure each player is in the correct tier. Once a player is ranked based on win / loss ratios, they’ll enter into brackets. Brackets will be based on ranks. Eventually going down to a final game between two opponents, and the winner being awarded a yet to be determined amount towards college tuition.
-                        </li>
-                        <br>
+                    <div id="rules_overlay" class="overlay" >
+                        <ul>
                             <li>
-
+                                
+                                After registration is complete, students will be onboarded into the gaming platform to create an account and begin playing. This will be purely based on skill. The best competitor will win. 
+                            </li>
+                            <br>
+                            <li>
+                                
+                                The chess game will have preliminary rounds to determine ranks. This will be the calibration phase to make sure each player is in the correct tier. Once a player is ranked based on win / loss ratios, they’ll enter into brackets. Brackets will be based on ranks. Eventually going down to a final game between two opponents, and the winner being awarded a yet to be determined amount towards college tuition.
+                            </li>
+                            <br>
+                            <li>
+                                
                                 Please note – the final game will either have to be in person, and or streamed in an isolated area to make sure the finalists are not cheating. This should discourage would be cheaters from cheating during the previous stages. Cheaters simply won’t be able to run bots or algorithms during the live and / or streamed event. Details are being withheld about the exact measures to prevent creative circumventions to anti-cheating measure. 
                             </li>
-                            </ul>
-                </div>
-                
-                <div id="opencomp_overlay" class="overlay">
-                    <p>
-                        After the first high school only tournament, we will open a second chess tournament to the general public. This is how we will ensure the prize account for the students will always have funds. A percentage from the entry fees of the general public competition, will go towards the scholarship fund. An overly simplistic example would be the following. General public competition #1 entry fee is 10 ADA. 1 Ada will be diverted to scholarship fund, 9 ADA will go into general competition fund. 
-                    </p>
-                    <br>
-                    <h4>
-                        Disclaimer: We are not a 501C entity or a non-for profit. We have operating costs. From hosting servers, NFT artists costs for generating NFTs, web domains, game developers, blockchain developers, web developers. Some funds from the open competition will go towards operating expenses. 
-                    </h4>
-                </div>
-                
-                <div id="prize_overlay" class="overlay">
-                    <ul>
-                       <li>
-                        There will be many deciding factors on how much the prize pool will be, including the number of competitors, sponsors, and potential donors. We are aiming for all of the payments to the winners, happening on chain and as transparent as possible. 
-                       </li>
-                       <br> 
-                       <li>
-                           The fund will be bootstrapped from NFT sales, and all competitors will pay a very small entry fee for a chance at the prize (roughly $20 in crypto). This entire process will be 100% automated. The prize fund, and entry fee portions that will contribute to the grand prize will automatically go into a smart contract, programmed to pay to the winning student’s university of choice. The amount of funds from the entry fees, which will go towards the final fund will be variable. If we have 1 million competitors vs 10,000 competitors, then the percentage dedicated towards the jackpot will change. We want the jackpot to make a substantial difference in terms of tuition, not just a portion of it. And not only for the first year of the competition but every year thereafter. Thus, we must calculate how much will go towards this year, vs next year’s competition. 
-                        </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="opencomp_overlay" class="overlay">
+                        <p>
+                            After the first high school only tournament, we will open a second chess tournament to the general public. This is how we will ensure the prize account for the students will always have funds. A percentage from the entry fees of the general public competition, will go towards the scholarship fund. An overly simplistic example would be the following. General public competition #1 entry fee is 10 ADA. 1 Ada will be diverted to scholarship fund, 9 ADA will go into general competition fund. 
+                        </p>
                         <br>
-                           <li>
-                        The prize fund, and entry fee portions that will contribute to the grand prize will automatically go into a smart contract, programmed to pay to the winning student’s university of choice. The amount of funds from the entry fees, which will go towards the final fund will be variable. If we have 1 million competitors vs 10,000 competitors, then the percentage dedicated towards the jackpot will change.
-                       </li>
-                       <br>
-                       <li>
-                        We want the jackpot to make a substantial difference in terms of tuition, not just a portion of it. And not only for the first year of the competition but every year thereafter. Thus, we must calculate how much will go towards this year, vs next year’s competition. 
-                       </li>
-                    </ul>
-                </div>
-                
-                <div id="comm_overlay" class="overlay">
-                    <p>
-                        Tweeting and posting about this project can help increase the prize fund by raising awareness, and in turn potential participants. The ultimate goal of this project is to have as many tournaments throughout the year as possible, thus giving as many students as possible, a better chance at funding their higher education.
-                    </p>
-                </div>
-                
-                <div id="contact_overlay" class="overlay">
-                    <p>
-                        Discord Link?
-                    </p>
+                        <h5>
+                            Disclaimer: We are not a 501C entity or a non-for profit. We have operating costs. From hosting servers, NFT artists costs for generating NFTs, web domains, game developers, blockchain developers, web developers. Some funds from the open competition will go towards operating expenses. 
+                        </h5>
+                    </div>
+                    
+                    <div id="prize_overlay" class="overlay">
+                        <ul>
+                            <li>
+                                prize pool will be factored based on criteria such as number of competitors, sponsors, and fundraiser contributions. payments will be handled transparently on the block chain. 
+                            </li>
+                                
+                            <br> 
+                            <li>
+                                competitors will pay a very small entry fee (roughly $20 in crypto) for a chance at the grand prize.The prize fund, and entry fee portions that will contribute to the grand prize will automatically go into a smart contract, programmed to pay to the winning student’s university of choice.
+                            </li>
+                            <br>
+                            <li> 
+                                The amount of funds from the entry fees contributing to the final prize will vary based on amount of competitors enrolled. We want the jackpot to make a substantial difference in terms of tuition, not just a portion of it. And not only for the first year of the competition but every year thereafter. Thus, we must calculate how much will go towards this year, vs next year’s competition. 
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="comm_overlay" class="overlay">
+                        <p>
+                            Tweeting and posting about this project can help increase the prize fund by raising awareness, and in turn potential participants. The ultimate goal of this project is to have as many tournaments throughout the year as possible, thus giving as many students as possible, a better chance at funding their higher education.
+                        </p>
+                    </div>
+                    
+                    <div id="contact_overlay" class="overlay">
+                        <p>
+                            Discord Link?
+                        </p>
+                    </div>
                 </div>
             </div>
 
