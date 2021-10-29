@@ -142,7 +142,9 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-   position: relative;
+   position: relative;   
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
 }
 
 .home_container {
@@ -150,8 +152,7 @@ body {
     flex-direction: column;
     height: 70vh;
     justify-content: space-around;
-    scroll-snap-align: center;
-    scroll-snap-stop: normal;
+
 }
 
 
@@ -202,7 +203,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 6vh;
+    bottom: 10vh;
 }
 
 .green > img {
@@ -216,7 +217,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;  
-      scroll-snap-align: center;
+    scroll-snap-align: center;
     scroll-snap-stop: normal;
 }
 
