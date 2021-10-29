@@ -9,7 +9,7 @@ html {
     background-color: #FDFDFB;
     color: #090B0B;
     overflow-x: hidden;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: both;
     scroll-behavior: smooth;
 }
 
