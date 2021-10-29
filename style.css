@@ -9,7 +9,7 @@ html {
     background-color: #FDFDFB;
     color: #090B0B;
     overflow-x: hidden;
-    scroll-snap-type: both;
+    scroll-snap-type: y;
     scroll-behavior: smooth;
 }
 
@@ -143,8 +143,7 @@ body {
     align-items: center;
     flex-direction: column;
    position: relative;   
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+
 }
 
 .home_container {
@@ -152,7 +151,8 @@ body {
     flex-direction: column;
     height: 60vh;
     justify-content: space-around;
-
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
 }
 
 
@@ -217,8 +217,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;  
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+
 }
 
 .roadmap_container {
@@ -230,13 +229,14 @@ body {
     height: 80vh;
     justify-items: center;
     margin-top: 2em;
-
+    scroll-snap-align: end;
+    scroll-snap-stop: normal;
 }
 
 
 
 .roadmap > h1 {
-    margin-top: 10vh;
+    margin-top: 5vh;
     text-align: center;    
 }
 
@@ -254,6 +254,7 @@ body {
     align-items: center;
     margin-top: 3vh;
     margin-bottom: 5vh;
+
 }
 
 .roadmapinfo {
@@ -326,8 +327,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;  
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+
 }
 
 .nft_container {
@@ -340,7 +340,8 @@ body {
     justify-items: center;
     align-items: center;
     text-align: center;
-
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
 }
 
 .nft_container > h1 {
@@ -469,8 +470,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
   }
 
   .overlay_container {
@@ -478,6 +477,8 @@ body {
     flex-direction: column;
     height: 75vh;
     position: relative;
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
   }  
 
   .active {
