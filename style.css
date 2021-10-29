@@ -9,7 +9,7 @@ html {
     background-color: #FDFDFB;
     color: #090B0B;
     overflow-x: hidden;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
@@ -198,10 +198,15 @@ body {
 
 .green {
     width: 100%;
-    position:absolute;
-    bottom: 0;
-    padding-bottom: 20px;
-    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 6vh;
+}
+
+.green > img {
+    width: 80%;
 }
 
 
