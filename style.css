@@ -9,7 +9,6 @@ html {
     background-color: #FDFDFB;
     color: #090B0B;
     overflow-x: hidden;
-    scroll-snap-type: y;
     scroll-behavior: smooth;
 }
 
@@ -227,8 +226,7 @@ body {
     height: 80vh;
     justify-items: center;
     margin-top: 2em;
-    scroll-snap-align: end;
-    scroll-snap-stop: normal;
+
 }
 
 
@@ -338,8 +336,7 @@ body {
     justify-items: center;
     align-items: center;
     text-align: center;
-    scroll-snap-align: center;
-    scroll-snap-stop: normal;
+
 }
 
 .nft_container > h1 {
@@ -475,8 +472,6 @@ body {
     flex-direction: column;
     height: 75vh;
     position: relative;
-    scroll-snap-align: center;
-    scroll-snap-stop: normal;
   }  
 
   .active {
