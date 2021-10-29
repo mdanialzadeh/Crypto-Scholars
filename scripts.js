@@ -24,7 +24,7 @@ if (history.scrollRestoration) {
 function buttons () {
     
 navButtons[0].addEventListener('click', () => {
-    About.scrollIntoView()
+    window.scrollTo(0, 0);
 })
 
 navButtons[1].addEventListener('click', () => {
