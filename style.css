@@ -143,14 +143,14 @@ body {
     align-items: center;
     flex-direction: column;
    position: relative;   
-    scroll-snap-align: center;
+    scroll-snap-align: end;
     scroll-snap-stop: normal;
 }
 
 .home_container {
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: 60vh;
     justify-content: space-around;
 
 }
@@ -217,7 +217,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;  
-    scroll-snap-align: center;
+    scroll-snap-align: end;
     scroll-snap-stop: normal;
 }
 
@@ -236,7 +236,7 @@ body {
 
 
 .roadmap > h1 {
-    margin-top: 8vh;
+    margin-top: 10vh;
     text-align: center;    
 }
 
@@ -326,7 +326,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;  
-    scroll-snap-align: center;
+    scroll-snap-align: end;
     scroll-snap-stop: normal;
 }
 
@@ -469,7 +469,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: center;
+    scroll-snap-align: end;
     scroll-snap-stop: normal;
   }
 
