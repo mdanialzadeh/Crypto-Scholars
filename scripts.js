@@ -24,19 +24,19 @@ if (history.scrollRestoration) {
 function buttons () {
     
 navButtons[0].addEventListener('click', () => {
-    About.scrollIntoView({behavior: "smooth"})
+    About.scrollIntoView()
 })
 
 navButtons[1].addEventListener('click', () => {
-    roadmap.scrollIntoView({behavior: "smooth"})
+    roadmap.scrollIntoView()
 })
 
 navButtons[2].addEventListener('click', () => {
-    NFT.scrollIntoView({behavior: "smooth"})
+    NFT.scrollIntoView()
 })
 
 navButtons[3].addEventListener('click', () => {
-    info.scrollIntoView({behavior: "smooth"})
+    info.scrollIntoView()
 })
 
 }
