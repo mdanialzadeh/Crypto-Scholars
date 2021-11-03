@@ -167,26 +167,31 @@ body {
 
 
 .pre-reg {
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-family: inherit;
     text-align: center;
 }
 
 .signup {
     width: 100%;
-    height: 20%;
+    height: 10%;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin-top: 5em;
 }
 
-
+#preRegister {
+    margin-top: 10em;
+}
 
 .email_input {
-    padding: .4em 2em;
+    padding: .3em 1em;
     border-radius: 10px 10px;
-    border: none;
+    border: 1px solid black;
+    margin-right: 2em;
+    text-align: center;
 }
 
 .email_input:focus {
@@ -203,7 +208,7 @@ body {
 }
 
 .green > img {
-    width: 80%;
+    width: 70%;
 }
 
 
@@ -225,7 +230,8 @@ body {
          column-gap: 4em;
     height: 80vh;
     justify-items: center;
-    margin-top: 2em;
+    align-items: stretch;
+    margin-top: 1em;
 
 }
 
@@ -655,9 +661,26 @@ body {
 
 
 
+@-webkit-keyframes slide-down {
+    0% {
+        transform: translateY(0);
+        
+    }
+
+    80% {
+        transform: translateY(4.875em) scale3d(.9, 1.2, 0);
+        
+    }
+
+    100% {
+        transform:translateY(.375em)
+    }
+}
+
 @keyframes slide-down {
     0% {
         transform: translateY(0);
+        
     }
 
     80% {
