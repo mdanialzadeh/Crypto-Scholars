@@ -548,6 +548,17 @@ body {
     align-items: center;    
 }
 
+.contact {
+    display: flex;
+    align-items: center;
+   justify-content: center;
+   margin: 20px
+}
+
+.contact > img {
+    margin-right: 20px;
+}
+
   .overlay {
       position: absolute;
       bottom: 0;
