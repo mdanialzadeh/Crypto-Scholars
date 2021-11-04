@@ -204,11 +204,12 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
 }
 
 .green > img {
-    width: 70%;
+    width: 70vw;
+    height: 20vh;
 }
 
 
